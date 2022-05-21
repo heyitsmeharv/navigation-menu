@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BsList, BsFillQuestionSquareFill } from 'react-icons/bs';
 import "./NavigationMenu.css";
 
-const NavigationMenu = ({ options, colour, border }) => {
+const NavigationMenu = ({ options, colour = '#14646f', border = '#14646F' }) => {
   const [open, setOpen] = useState(false);
   const half = Math.ceil(options?.length / 2);
   const firstHalf = options?.slice(0, half);
@@ -12,7 +12,7 @@ const NavigationMenu = ({ options, colour, border }) => {
     <div className="root">
       <div className="container diamond-shape"
         style={{
-          background: colour ? colour : "#14646f", border: border ? border : "2px solid #14646F",
+          background: colour, border: `2px solid ${border}`,
         }}>
         <div className="diamond-icon">
           <button aria-label="menu-button" tabIndex="0" className="diamond-icon-btn" onClick={() => setOpen(!open)}>
