@@ -1,0 +1,197 @@
+.root {
+  width: fit-content;
+}
+
+.container {
+  margin: auto;
+  text-align: center; 
+}
+
+.diamond-shape {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  transform:rotate(45deg);
+}
+
+.diamond-icon {
+  display: table-cell;
+  transform: rotate(-45deg);
+  vertical-align: middle;
+	width: 60px;
+  height: 60px;
+}
+
+.diamond-icon .diamond-icon-btn {
+  color: white;
+  outline: none;
+  border: none;
+  background: none;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.diamond-icon-btn:focus {
+  color: black;
+}
+
+.diamond-icon .diamond-icon-btn:hover {
+  cursor: pointer;
+}
+
+.diamond-icon .diamond-icon-btn:after {
+  content: "";
+  background:white;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.8s;
+  transform:rotate(45deg);
+  height: 60px;
+  width: 60px;
+}
+
+.diamond-icon .diamond-icon-btn:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0.2s;
+}
+
+.diamond-icon .diamond-icon-btn svg {
+  height: 32px;
+  width: 32px;
+}
+
+.nav {
+  min-width: 200px;
+  background-color: #f2f2f2;
+  min-height: 96px;
+  border: 2px solid #ddd;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.nav .left {
+  display: flex;
+  justify-content: space-evenly;  
+  width: 100%;
+}
+
+.nav .right {
+  display: flex;
+  justify-content: space-evenly;  
+  width: 100%;
+}
+
+.grow {
+  transition: all .5s ease-in-out;
+  animation: grow forwards 0.25s linear;
+}
+
+.shrink {
+  transition: all .5s ease-in-out;
+  animation: shrink forwards 0.2s linear;
+}
+
+.nav-option-button {
+  color: #a9a9a9;
+  font-size: 12px;
+  outline: none;
+  border: none;
+  background: none;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+}
+
+.nav-option-button svg {
+  width: 32px;
+  height: 32px;
+}
+
+.nav-option-button:hover {
+  color: #1F9EB0;
+  cursor: pointer;
+  animation: bounce forwards 1.5s linear 
+}
+
+.nav-option-button:focus {  
+  color: #1F9EB0;
+  animation: bounce forwards 1.5s linear 
+}
+
+.nav-option-button:focus .nav-option-button-label {
+  font-weight: bold;
+  text-decoration: underline solid 2px #1F9EB0;
+  text-underline-offset: 2px;
+}
+
+.nav-option-button:active {
+  color: #c1e1ec;
+}
+
+.bounce {
+  animation-name: bounce;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+
+@keyframes grow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale(0.8);
+    }
+  25% {
+    transform: scale(0.6);
+    }
+  50% {
+    transform: scale(0.4);
+    }
+  75%{
+    transform: scale(0.2);
+  }
+  100% {
+    transform: scale(0);
+   }
+}
+
+@keyframes bounce {
+  0% { 
+    transform: scale(1,1) translateY(0);
+  }
+  10% { 
+    transform: scale(1.1,.9) translateY(0); 
+  }
+  30% { 
+    transform: scale(.9,1.1) translateY(-10px); 
+  }
+  50% { 
+    transform: scale(1.05,.95) translateY(0);
+   }
+  57% { 
+    transform: scale(1,1) translateY(-7px);
+   }
+  64% { 
+    transform: scale(1,1) translateY(0);
+  }
+  100% { 
+    transform: scale(1,1) translateY(0);
+  }
+}
