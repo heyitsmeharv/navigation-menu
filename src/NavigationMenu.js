@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BsList, BsFillQuestionSquareFill } from 'react-icons/bs';
 import "./NavigationMenu.css";
 
-const NavigationMenu = ({ options, colour = '#14646f', border = '#14646F' }) => {
+const NavigationMenu = ({ options, colour = '#1F9EB0', border = '#14646F' }) => {
   const [open, setOpen] = useState(false);
   const half = Math.ceil(options?.length / 2);
   const firstHalf = options?.slice(0, half);
