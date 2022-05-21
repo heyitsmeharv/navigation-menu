@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BsList, BsFillQuestionSquareFill } from 'react-icons/bs';
-import "./NavigationMenu.scss";
+import "./NavigationMenu.css";
 
 const NavigationMenu = ({ options, colour, border }) => {
   const [open, setOpen] = useState(false);
