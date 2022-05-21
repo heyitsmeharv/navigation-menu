@@ -4,6 +4,10 @@ import "./NavigationMenu.scss";
 
 const NavigationMenu = ({ options, colour, border }) => {
   const [open, setOpen] = useState(false);
+  const half = Math.ceil(options?.length / 2);
+  const firstHalf = options?.slice(0, half);
+  const secondHalf = options?.slice(half, options?.length);
+  const isEven = options.length % 2 === 0;
   return (
     <div className="root">
       <div className="container diamond-shape"
